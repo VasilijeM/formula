@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formula 1</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark py-3 px-lg-5 d-none d-lg-block">
+        <div class="row">
+            <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+381 65 775 3466</a>
+                    <span class="text-body">|</span>
+                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>formula@gmail.com</a>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-body px-3" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-body pl-3" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="position-relative px-lg-5" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="text-uppercase text-primary mb-1">Formula 1</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="statistika.html" class="nav-item nav-link">Statistika</a>
+                        <a href="administracija.html" class="nav-item nav-link">Administracija</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-1 text-primary text-center">Statistika cele sezone</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Vozaci tokom cele sezone 2022</h1>
+            <div class="row">
+                    <table class="table table-hover" >
+                        <thead>
+                        <tr>
+                            <th>Vozac</th>
+                            <th>Tim</th>
+                            <th>Broj poena</th>
+                        </tr>
+                        </thead>
+                        <tbody id="vozaci">
+
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-1 text-primary text-center">Statistika po trkama</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Vozaci tokom cele sezone 2022</h1>
+            <div class="row">
+                <div class="col-12">
+                    <label for="pretraga">Pretraga</label>
+                    <input type="text" id="pretraga" onkeyup="pretrazi()" class="form-control">
+                </div>
+                <div class="col-12">
+                    <label for="sort">Sortiraj po poenima</label>
+                    <select class="form-control" id="sort" onchange="pretrazi()">
+                        <option value="desc">Od najveceg do najmanjeg broja</option>
+                        <option value="asc">Od najmanjeg do najveceg broja</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table table-hover" >
+                    <thead>
+                    <tr>
+                        <th>Staza</th>
+                        <th>Vozac</th>
+                        <th>Tim</th>
+                        <th>Broj poena</th>
+                    </tr>
+                    </thead>
+                    <tbody id="statistika">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
+        <p class="mb-2 text-center text-body">&copy;formula 1 All Rights Reserved.</p>
+        <p class="m-0 text-center text-body">Designed by Formula 1 team</p>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        function vratiStatistikuZaSezonu(){
+            $.ajax({
+                url: 'server/get_statistika_sezona.php',
+                success: function(jsonData){
+                    let podaci = JSON.parse(jsonData);
+                    $.each( podaci, function( i, val ) {
+                        let nalepi = ' <tr>' +
+                            '<td>' + val.imePrezime + '</td>' +
+                            '<td>' + val.naziv + '</td>' +
+                            '<td>' + val.brojPoena + '</td>' +
+                            '</tr>';
+                        $( "#vozaci").append( nalepi);
+                    });
+                }
+            })
+        }
+        vratiStatistikuZaSezonu();
+
+        function pretrazi(){
+            $.ajax({
+                url: 'server/get_statistika_trka.php',
+                data : {
+                    pretraga: $("#pretraga").val(),
+                    sort: $("#sort").val()
+                },
+                success: function(jsonData){
+                    console.log(jsonData);
+                    let podaci = JSON.parse(jsonData);
+                    $("#statistika").empty();
+                    $.each( podaci, function( i, val ) {
+                        let nalepi = ' <tr>' +
+                            '<td>' + val.staza + '</td>' +
+                            '<td>' + val.vozacID.imePrezime + '</td>' +
+                            '<td>' + val.vozacID.timID.naziv + '</td>' +
+                            '<td>' + val.brojPoena + '</td>' +
+                            '</tr>';
+                        $( "#statistika").append( nalepi);
+                    });
+                }
+            })
+        }
+        pretrazi();
+    </script>
+</body>
+
+</html>
